@@ -1,0 +1,19 @@
+<button (click)="initNewPhone()">Create New Phone</button>
+
+<table>
+  <thead>
+    <th>Firm</th>
+    <th>Model</th>
+    <th>Price</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let phone of phones">
+      <td>{{ phone.firm }}</td>
+      <td>{{ phone.model }}</td>
+      <td>{{ phone.price }}</td>
+      <td><button (click)="editPhone(phone)">Edit</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<app-edit-phone [phone]="phoneToEdit" (phonesUpdated)="updatePhoneList($event)"></app-edit-phone>

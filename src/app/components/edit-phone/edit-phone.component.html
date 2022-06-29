@@ -1,0 +1,18 @@
+<div *ngIf="phone">
+    <h2>{{ phone?.firm }}</h2>
+    <div>
+        firm:
+        <input [(ngModel)]="phone.firm" placeholder="Firm"/>
+    </div>
+    <div>
+        model:
+        <input [(ngModel)]="phone.model" placeholder="Model"/>
+    </div>
+    <div>
+        price:
+        <input [(ngModel)]="phone.price" placeholder="Price"/>
+    </div>
+    <button (click)="updatePhone(phone)" *ngIf="phone.id">Save</button>
+    <button (click)="deletePhone(phone)" *ngIf="phone.id">Delete</button>
+    <button (click)="createPhone(phone)" *ngIf="!phone.id">Create</button>
+</div>   
